@@ -1,6 +1,11 @@
 Player = game.Players.pi3dot14
 Character = Player.Character
 Character.Archivable = true
+for _,p in ipairs(Character:GetDescendants()) do
+	if (p:IsA("Decal")) then
+		p.Archivable = false
+	end
+end
 copies = {}
 while (Character.Humanoid.Health > 0) do
 	local copy = Character:Clone(workspace)
